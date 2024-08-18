@@ -15,24 +15,22 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectGroup, SelectI
 import { Textarea } from "../ui/textarea";
 import { Client, Databases } from "appwrite";
 import PhoneInput from "react-phone-number-input";
-import "react-phone-number-input/style.css"; // Import the default styling
+import "react-phone-number-input/style.css";
 import Image from "next/image";
 
 // Appwrite configuration
-const client = new Client()
-  .setEndpoint("https://cloud.appwrite.io/v1") // Replace with your Appwrite endpoint
-  .setProject("66bf025d002756389b03"); // Replace with your project ID
+const client = new Client().setEndpoint("https://cloud.appwrite.io/v1").setProject("66bf025d002756389b03");
 
 const databases = new Databases(client);
-const databaseId = "66bf0296002ad4d9af1e"; // Replace with your database ID
-const collectionId = "66bf02ab0034437add05"; // Replace with your collection ID
+const databaseId = "66bf0296002ad4d9af1e";
+const collectionId = "66bf02ab0034437add05";
 
 export function RegisterDialog() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [number, setNumber] = useState(""); // Handle as string
-  const [gender, setGender] = useState(""); // New state for gender
+  const [number, setNumber] = useState("");
+  const [gender, setGender] = useState("");
   const [transportation, setTransportation] = useState("");
   const [message, setMessage] = useState("");
 
@@ -48,13 +46,11 @@ export function RegisterDialog() {
       const response = await databases.createDocument(databaseId, collectionId, "unique()", {
         name,
         email,
-        number, // Send as a string
-        gender, // Include gender in the document
+        number,
+        gender,
         transportation,
         message,
       });
-      window.alert("Thank you for registering!");
-      console.log("Document created successfully:", response);
       setIsSuccess(true);
     } catch (error) {
       console.error("Error creating document:", error);
@@ -113,7 +109,7 @@ export function RegisterDialog() {
               className="input border rounded-sm p-2"
               required
             />
-            <Label htmlFor="gender">Gender</Label> {/* New gender selection field */}
+            <Label htmlFor="gender">Gender</Label>
             <Select onValueChange={(value) => setGender(value)}>
               <SelectTrigger id="gender" name="gender">
                 <SelectValue placeholder="Select gender" />

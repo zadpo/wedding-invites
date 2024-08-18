@@ -68,6 +68,14 @@
   }
 }
 
+
+@font-face {
+  font-family: "Cylburn";
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("/fonts/Cylburn.ttf");
+}
+
 .map-container {
   position: relative;
   width: 100%;

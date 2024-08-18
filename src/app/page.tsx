@@ -4,6 +4,7 @@ import Image from "next/image";
 import { RiPlayCircleLine, RiPauseCircleLine } from "@remixicon/react";
 import { useState, useRef, useEffect } from "react";
 import { RegisterDialog } from "@/components/modals/RegisterDialog";
+import { Dancing_Script } from "next/font/google";
 
 const Home: NextPage = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -72,9 +73,9 @@ const Home: NextPage = () => {
 
       {/* Text content */}
       <div className="flex flex-col items-center justify-center absolute inset-0 z-10 text-center">
-        <h1 className="text-[56px] font-bold text-amber-800 font-dancing-script">Our Wedding</h1>
-        <p className="text-4xl font-semibold text-amber-800 font-dancing-script">Save the date</p>
-        <p className="text-2xl font-medium text-amber-800 font-dancing-script">February 28th 2025</p>
+        <h1 className="text-[56px] font-bold text-amber-800 font-cylburn">Our Wedding</h1>
+        <p className="text-4xl font-semibold text-amber-800 font-cylburn">Save the date</p>
+        <p className="text-2xl font-medium text-amber-800 font-cylburn">February 28th 2025</p>
         {/* Register Dialog Trigger */}
         <div className="py-2">
           <RegisterDialog />

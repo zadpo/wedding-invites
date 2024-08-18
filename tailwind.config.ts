@@ -20,6 +20,7 @@ const config = {
     extend: {
       fontFamily: {
         "dancing-script": ["Dancing Script", "cursive"],
+        cylburn: ["Cylburn", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
